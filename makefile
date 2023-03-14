@@ -16,13 +16,13 @@ color.cmi : color.mli
 color.cmx : color.ml
 	ocamlopt -c color.ml
 
-timetable.cmi : timetable.mli color.mli dict.mli preprocessor.mli
-	ocamlopt -c timetable.mli
+# timetable.cmi : timetable.mli color.mli dict.mli preprocessor.mli
+# 	ocamlopt -c timetable.mli
 
 timetable.cmx : timetable.ml
 	ocamlopt -c timetable.ml
 
-all	: dict.cmi dict.cmx preprocessor.cmi preprocessor.cmx color.cmi color.cmx timetable.cmi timetable.cmx
+all	: dict.cmi dict.cmx preprocessor.cmi preprocessor.cmx color.cmi color.cmx timetable.cmx
 	ocamlopt -o timetable dict.cmx preprocessor.cmx color.cmx timetable.cmx
 
 clear :

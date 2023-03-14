@@ -1,3 +1,6 @@
-val basic_coloring : 'a list -> ('a * int) list
+module type COLORGRAPH = sig
+    val basic_coloring : 'a list -> ('a * int) list
+    val chaitin : ('a * 'a list) list -> ('a * 'b list) list -> 'b list -> ('a * 'b list) list
+end
 
-val get_unique_colors : ('a * 'b) list -> 'b list
+module ColorGraph : COLORGRAPH
